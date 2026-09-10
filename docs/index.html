@@ -1,1 +1,708 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Content Refresh Opportunity Scoring</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Arial, sans-serif;
+            background: #f6f7fb;
+            color: #202124;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: auto;
+            padding: 40px 24px 80px;
+        }
+
+        header {
+            background: white;
+            border-radius: 18px;
+            padding: 55px 50px;
+            margin-bottom: 28px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+        }
+
+        .tag {
+            display: inline-block;
+            background: #eef2ff;
+            color: #3949ab;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 42px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            color: #171717;
+        }
+
+        .subtitle {
+            font-size: 19px;
+            color: #5f6368;
+            max-width: 850px;
+        }
+
+        .meta {
+            margin-top: 25px;
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        section {
+            background: white;
+            border-radius: 18px;
+            padding: 38px 42px;
+            margin-bottom: 24px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            font-size: 27px;
+            margin-bottom: 18px;
+            color: #171717;
+        }
+
+        h3 {
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 19px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #3f4448;
+        }
+
+        ul {
+            margin: 12px 0 18px 25px;
+            color: #3f4448;
+        }
+
+        li {
+            margin-bottom: 7px;
+        }
+
+        .highlight {
+            background: #f8f9ff;
+            border-left: 4px solid #5c6bc0;
+            padding: 20px 22px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 25px 0;
+        }
+
+        .card {
+            background: #f8f9fa;
+            padding: 22px;
+            border-radius: 12px;
+        }
+
+        .card strong {
+            display: block;
+            font-size: 23px;
+            color: #3949ab;
+            margin-bottom: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 13px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+        }
+
+        code {
+            background: #f1f3f4;
+            padding: 3px 7px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .pill {
+            display: inline-block;
+            padding: 5px 11px;
+            border-radius: 15px;
+            background: #f1f5f9;
+            margin: 4px;
+            font-size: 13px;
+        }
+
+        a {
+            color: #3949ab;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            color: #6b7280;
+            padding: 25px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 750px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            header,
+            section {
+                padding: 28px 22px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <header>
+        <span class="tag">FLYRANK ML INTERNSHIP CAPSTONE</span>
+
+        <h1>
+            Content Refresh Opportunity Scoring
+        </h1>
+
+        <p class="subtitle">
+            Using historical SEO performance signals to prioritize
+            content pages for human review and potential refresh.
+        </p>
+
+        <div class="meta">
+            <strong>Author:</strong> Prachi Choudhary
+            &nbsp; | &nbsp;
+            <strong>Lane:</strong> Refresh / Content Opportunity Scoring
+            &nbsp; | &nbsp;
+            <strong>Date:</strong> September 2026
+        </div>
+    </header>
+
+
+    <!-- ABSTRACT -->
+    <section>
+        <h2>Abstract</h2>
+
+        <p>
+            This project asks whether historical SEO performance signals
+            can be used to identify content pages that deserve review for
+            a potential refresh.
+        </p>
+
+        <p>
+            The analysis is framed at the client-content pair level,
+            using February 2026 information as the feature window and
+            March 2026 performance as the outcome window.
+        </p>
+
+        <p>
+            An interpretable Decision Tree approach is compared with a
+            transparent rule-based opportunity score using the same
+            evaluation design.
+        </p>
+
+        <p>
+            The analysis is intended to produce a ranked set of content
+            items for editorial review rather than establish causality
+            or predict Google's ranking algorithm.
+        </p>
+
+        <p>
+            The final output is a decision-support action queue containing
+            priority scores, reason codes, and recommended review actions.
+        </p>
+    </section>
+
+
+    <!-- PROBLEM -->
+    <section>
+        <h2>1. Problem Statement</h2>
+
+        <p>
+            Content teams cannot manually investigate every page with
+            equal depth. The goal of this project is therefore to create
+            a repeatable method for deciding which pages should receive
+            attention first.
+        </p>
+
+        <div class="highlight">
+            <strong>Decision supported:</strong><br>
+            Which content pages should a content team prioritize for
+            human review and possible refresh?
+        </div>
+
+        <p>
+            The unit of analysis is a client-content pair. The output is
+            a ranked priority score and action queue that an editor can
+            use to guide further investigation.
+        </p>
+
+        <p>
+            A wrong prioritization can waste editorial resources, while
+            failing to prioritize a page that warrants review can leave
+            a potential content opportunity unattended.
+        </p>
+    </section>
+
+
+    <!-- DATA -->
+    <section>
+        <h2>2. Data</h2>
+
+        <p>
+            The analysis uses the FlyRank ML Internship search-performance
+            warehouse.
+        </p>
+
+        <div class="grid">
+
+            <div class="card">
+                <strong>February 2026</strong>
+                Feature window
+            </div>
+
+            <div class="card">
+                <strong>March 2026</strong>
+                Outcome window
+            </div>
+
+            <div class="card">
+                <strong>Client × Content</strong>
+                Unit of analysis
+            </div>
+
+        </div>
+
+        <h3>Predictive signals</h3>
+
+        <span class="pill">February impressions</span>
+        <span class="pill">February clicks</span>
+        <span class="pill">February CTR</span>
+        <span class="pill">Average position</span>
+        <span class="pill">GSC availability</span>
+
+        <h3>Data safety</h3>
+
+        <p>
+            Future outcome information was deliberately excluded from
+            the predictive feature set.
+        </p>
+
+        <p>
+            Label-derived fields such as
+            <code>trend_direction</code> and
+            <code>trend_pct</code> were excluded because they can encode
+            information about performance movement.
+        </p>
+
+        <p>
+            Pseudonymous identifiers such as
+            <code>client_hash_id</code> and
+            <code>content_hash_id</code> are used for identification
+            and grouping only, never as predictive features.
+        </p>
+
+        <p>
+            No client names, domains, URLs, private search queries,
+            credentials, or raw private exports are included in this
+            public paper.
+        </p>
+    </section>
+
+
+    <!-- METHODOLOGY -->
+    <section>
+        <h2>3. Methodology</h2>
+
+        <h3>Baseline</h3>
+
+        <p>
+            A transparent rule-based opportunity score serves as the
+            baseline. It prioritizes pages using historical signals
+            associated with potential content-review opportunities.
+        </p>
+
+        <ul>
+            <li>Lower CTR receives greater priority.</li>
+            <li>Weaker average search position receives greater priority.</li>
+            <li>Observed impressions contribute to prioritization.</li>
+        </ul>
+
+        <h3>Machine-learning model</h3>
+
+        <p>
+            The model is an interpretable Decision Tree Classifier.
+            Decision trees were selected because their decisions can be
+            inspected and communicated relatively easily to editorial
+            stakeholders.
+        </p>
+
+        <h3>Feature set</h3>
+
+        <table>
+            <tr>
+                <th>Feature</th>
+                <th>Window</th>
+                <th>Purpose</th>
+            </tr>
+
+            <tr>
+                <td>Impressions</td>
+                <td>February</td>
+                <td>Search visibility</td>
+            </tr>
+
+            <tr>
+                <td>Clicks</td>
+                <td>February</td>
+                <td>Search traffic</td>
+            </tr>
+
+            <tr>
+                <td>CTR</td>
+                <td>February</td>
+                <td>Click capture</td>
+            </tr>
+
+            <tr>
+                <td>Average position</td>
+                <td>February</td>
+                <td>Ranking performance</td>
+            </tr>
+
+            <tr>
+                <td>GSC availability</td>
+                <td>February</td>
+                <td>Data coverage</td>
+            </tr>
+        </table>
+
+        <h3>Target</h3>
+
+        <p>
+            The outcome represents whether an eligible content item
+            went dark during the March outcome window based on March
+            search-performance availability and impressions.
+        </p>
+    </section>
+
+
+    <!-- EVALUATION -->
+    <section>
+        <h2>4. Evaluation</h2>
+
+        <p>
+            Evaluation uses a client-grouped train/test split so that
+            observations belonging to the same client are not split
+            across training and testing data.
+        </p>
+
+        <p>
+            February information is used as the predictive window,
+            while March information is reserved for evaluating the
+            outcome.
+        </p>
+
+        <h3>Metrics</h3>
+
+        <ul>
+            <li>Average Precision</li>
+            <li>Precision@K</li>
+            <li>Recall@K</li>
+            <li>F1@K</li>
+        </ul>
+
+        <div class="highlight">
+            <strong>Important:</strong>
+            Final numerical metrics should be populated from the
+            successful fresh warehouse run. No performance number is
+            fabricated in this paper.
+        </div>
+
+        <table>
+            <tr>
+                <th>Metric</th>
+                <th>Baseline</th>
+                <th>Decision Tree</th>
+            </tr>
+
+            <tr>
+                <td>Average Precision</td>
+                <td>TBD</td>
+                <td>TBD</td>
+            </tr>
+
+            <tr>
+                <td>Precision@K</td>
+                <td>TBD</td>
+                <td>TBD</td>
+            </tr>
+
+            <tr>
+                <td>Recall@K</td>
+                <td>TBD</td>
+                <td>TBD</td>
+            </tr>
+
+            <tr>
+                <td>F1@K</td>
+                <td>TBD</td>
+                <td>TBD</td>
+            </tr>
+        </table>
+
+        <p>
+            The task base rate should be reported alongside precision
+            or accuracy because a high score can otherwise be
+            misleading when the outcome is imbalanced.
+        </p>
+    </section>
+
+
+    <!-- INTERPRETATION -->
+    <section>
+        <h2>5. Interpretation</h2>
+
+        <p>
+            The analysis combines multiple historical SEO signals to
+            produce a repeatable content-review priority.
+        </p>
+
+        <p>
+            Low CTR can indicate that a page receives search visibility
+            but captures relatively few clicks.
+        </p>
+
+        <p>
+            A weaker average search position can indicate that a page
+            is not performing strongly in search results relative to
+            other pages.
+        </p>
+
+        <p>
+            Impressions provide an indication of observed search
+            visibility and help distinguish pages with different
+            levels of search exposure.
+        </p>
+
+        <p>
+            These relationships should be interpreted as directional
+            evidence from the dataset rather than causal effects.
+        </p>
+    </section>
+
+
+    <!-- RECOMMENDATIONS -->
+    <section>
+        <h2>6. Ranked Recommendations</h2>
+
+        <p>
+            The final output is intended to be a prioritized queue for
+            human editorial review.
+        </p>
+
+        <table>
+            <tr>
+                <th>Signal</th>
+                <th>Recommended action</th>
+            </tr>
+
+            <tr>
+                <td>Low CTR</td>
+                <td>
+                    Review title and meta description.
+                </td>
+            </tr>
+
+            <tr>
+                <td>Weak ranking</td>
+                <td>
+                    Review content depth, relevance and internal linking.
+                </td>
+            </tr>
+
+            <tr>
+                <td>Strong visibility with weak capture</td>
+                <td>
+                    Review search-result presentation and metadata.
+                </td>
+            </tr>
+
+            <tr>
+                <td>Multiple weak signals</td>
+                <td>
+                    Prioritize for deeper editorial review.
+                </td>
+            </tr>
+        </table>
+
+        <div class="highlight">
+            <strong>Editorial principle:</strong>
+            The ranking supports human decision-making. It does not
+            automatically determine which pages should be changed.
+        </div>
+    </section>
+
+
+    <!-- LIMITATIONS -->
+    <section>
+        <h2>7. Limitations & Honest Framing</h2>
+
+        <ul>
+            <li>
+                The analysis is observational rather than experimental.
+            </li>
+
+            <li>
+                Associations between SEO signals and outcomes should not
+                be interpreted as causal effects.
+            </li>
+
+            <li>
+                The model does not predict or reproduce Google's ranking
+                algorithm.
+            </li>
+
+            <li>
+                A high priority score does not guarantee that refreshing
+                a page will improve future performance.
+            </li>
+
+            <li>
+                Editorial review remains necessary before taking action.
+            </li>
+        </ul>
+
+        <p>
+            The results are therefore best described as
+            <strong>observed, measured, directional, and
+            decision-support oriented.</strong>
+        </p>
+    </section>
+
+
+    <!-- REPRODUCIBILITY -->
+    <section>
+        <h2>8. Reproducibility</h2>
+
+        <p>
+            The analysis is implemented in the project repository:
+        </p>
+
+        <p>
+            <a href="https://github.com/prachichoudhary2004/FlyRank"
+               target="_blank">
+                View the FlyRank repository →
+            </a>
+        </p>
+
+        <h3>Experiment configuration</h3>
+
+        <table>
+            <tr>
+                <th>Component</th>
+                <th>Configuration</th>
+            </tr>
+
+            <tr>
+                <td>Feature window</td>
+                <td>February 2026</td>
+            </tr>
+
+            <tr>
+                <td>Outcome window</td>
+                <td>March 2026</td>
+            </tr>
+
+            <tr>
+                <td>Validation</td>
+                <td>Client-grouped train/test split</td>
+            </tr>
+
+            <tr>
+                <td>Model</td>
+                <td>Decision Tree Classifier</td>
+            </tr>
+
+            <tr>
+                <td>Random seed</td>
+                <td>42</td>
+            </tr>
+        </table>
+
+        <p>
+            The project notebooks are stored under
+            <code>work/notebooks/</code>. The final submission URL is
+            stored in <code>submission/paper_url.txt</code>.
+        </p>
+    </section>
+
+
+    <!-- ACKNOWLEDGMENTS -->
+    <section>
+        <h2>9. Acknowledgments & Data Credit</h2>
+
+        <p>
+            Built on the FlyRank ML Internship dataset.
+        </p>
+
+        <p>
+            <a href="https://flyrank.ai"
+               target="_blank">
+                FlyRank
+            </a>
+        </p>
+    </section>
+
+
+    <footer>
+        Content Refresh Opportunity Scoring · FlyRank ML Internship Capstone
+    </footer>
+
+</div>
+
+</body>
+</html>
